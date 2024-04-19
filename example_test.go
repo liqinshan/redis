@@ -1,4 +1,4 @@
-package main
+package redis_test
 
 import (
 	"context"
@@ -59,7 +59,7 @@ func InitRedis(cluster bool) {
 	}
 }
 
-func main() {
+func ExampleClient() {
 	InitRedis(true)
 
 	data, err := Cache.Get(Ctx, "aaa")
