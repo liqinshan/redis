@@ -3,14 +3,14 @@ package redis_test
 import (
 	"context"
 	"fmt"
-	"github.com/liqinshan/redis/cache"
+	factory "github.com/liqinshan/redis"
 	"github.com/redis/go-redis/v9"
 	"strings"
 )
 
 var (
 	Ctx   = context.Background()
-	Cache cache.RedisClient
+	Cache factory.RedisClient
 )
 
 var (
@@ -38,7 +38,7 @@ func InitRedis(cluster bool) {
 			panic(pingErr)
 		}
 
-		Cache, err = cache.NewClientFactory(rdb)
+		Cache, err = factory.NewClientFactory(rdb)
 	} else {
 		rdb := redis.NewClient(&redis.Options{
 			Addr:     addr,
@@ -51,7 +51,7 @@ func InitRedis(cluster bool) {
 			panic(pingErr)
 		}
 
-		Cache, err = cache.NewClientFactory(rdb)
+		Cache, err = factory.NewClientFactory(rdb)
 	}
 
 	if err != nil {
