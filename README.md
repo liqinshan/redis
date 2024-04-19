@@ -8,4 +8,4 @@ github.com/redis/go-redis/v9 v9.5.1
 go get github.com/liqinshan/redis  
 
 ## 使用示例  
-见main.go
+见example_test.go
