@@ -1,4 +1,4 @@
-module redis
+module github.com/liqinshan/redis
 
 go 1.21.9
 
