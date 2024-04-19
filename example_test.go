@@ -3,8 +3,8 @@ package redis_test
 import (
 	"context"
 	"fmt"
+	"github.com/liqinshan/redis/cache"
 	"github.com/redis/go-redis/v9"
-	"redis/cache"
 	"strings"
 )
 
